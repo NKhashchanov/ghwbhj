@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TimeSheet</title>
+        <link href="./style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="toolbar">
+            <div id="projects" class="tb__menu">Редактирование проектов</div>
+            <div id="timesheet" class="tb__menu">Редактирование времени</div>
+            <div id="statistics" class="tb__menu">Статистика</div>
+        </div>
+        <div id="main">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="project__number">Номер</th>
+                        <th class="project__name">Название</th>
+                        <th class="project__users">Сотрудники</th>
+                        <th class="project__status">Статус</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
+
+<script type="module">
+    /* Обработчик события для элемента projects. Необходимо:
+    * - импортировать данные из projects.js и запустить метод request()
+    * - добавить в локальное хранилище информацию об открытой странице
+    * Данная страница должна открываться при запуске приложения
+    *  */
+    import {Projects} from "./projects.js";
+    Projects.request();
+</script>
+<script type="module">
+    /* Обработчик события для элемента timesheet. Необходимо:
+    * - импортировать данные из timesheet.js и запустить метод request()
+    * - добавить в локальное хранилище информацию об открытой странице */
+</script>
+<script type="module">
+    /* Обработчик события для элемента statistics. Необходимо:
+    * - импортировать данные из statistics.js и запустить метод request()
+    * - добавить в локальное хранилище информацию об открытой странице */
+</script>

@@ -41,9 +41,13 @@
     /* Обработчик события для элемента timesheet. Необходимо:
     * - импортировать данные из timesheet.js и запустить метод request()
     * - добавить в локальное хранилище информацию об открытой странице */
+    import {Timesheet} from "./timesheet.js";
+    Timesheet.request();
 </script>
 <script type="module">
     /* Обработчик события для элемента statistics. Необходимо:
     * - импортировать данные из statistics.js и запустить метод request()
     * - добавить в локальное хранилище информацию об открытой странице */
+    import {Statistics} from "./statistics.js";
+    Statistics.request();
 </script>

@@ -1,7 +1,8 @@
 export class Projects {
     /*
         Используя XMLHttpRequest нужно получить данные из файла db.json
-        и в случае успеха передать полученные данные в метод render(xhr.response)
+        и в случае успеха передать полученные данные в метод render(xhr.response)/
+        Используя метод setLocalData(xhr.response) записывает данные в локальное хранилище
         Используйте метод GET, responseType равный 'json'
     */
     static request() {
@@ -25,22 +26,18 @@ export class Projects {
         быть отмечены сотрудники.
     */
     static render(data) {
-        let projectsHTML = '';
+        /*
+        let projectsHTML = '', usersHTML = '';
+        data.users.forEach(el => {
+            usersHTML += '<option value="'+ el.id +'">'+ el.last_name +' '+ el.first_name +'</option>'
+        })
         data.projects.forEach(el => {
             projectsHTML += '<tr>' +
                 '    <td>'+ el.number +'</td>' +
                 '    <td>'+ el.name +'</td>' +
                 '    <td>' +
                 '        <select style="width: 95%" multiple="">' +
-                '            <option value="">1</option>' +
-                '            <option value="">2</option>' +
-                '            <option value="">3</option>' +
-                '            <option value="">4</option>' +
-                '            <option value="">5</option>' +
-                '            <option value="">6</option>' +
-                '            <option value="">7</option>' +
-                '            <option value="">8</option>' +
-                '            <option value="">9</option>' +
+                usersHTML +
                 '        </select>' +
                 '    </td>' +
                 '    <td>'+ el.status +'</td>' +
@@ -61,6 +58,8 @@ export class Projects {
                 '</table>';
 
         document.getElementById('main').innerHTML = tableHTML;
+
+         */
     }
 
     /*
@@ -73,7 +72,7 @@ export class Projects {
 
     /*
         Метод добавляет запись в локальное хранилище в формате
-        localStorage['projects'] = {номер_проекта1:{сотрудник1, сотрудник2...}, номер_проекта2:{сотрудник3, сотрудник5...}}
+        localStorage['projects'] = {id_проекта1:{сотрудник1, сотрудник2...}, id_проекта2:{сотрудник3, сотрудник5...}}
         соответственно в локальном хранилище объект projects хранит
         информацию по проектам и сотрудникам участвующим в этих проектах
     */
@@ -97,6 +96,14 @@ export class Projects {
         если записей нет, то нужно создать новую запись используя метод addProjectStorage
     */
     static listener() {
+
+    }
+
+    /*
+        Метод сохраняет данные из db.json в локальное хранилище
+        в формате localStorage['data'] = db.json
+    */
+    static setLocalData(data) {
 
     }
 }
